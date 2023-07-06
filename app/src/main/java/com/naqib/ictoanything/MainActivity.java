@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         penerangn=findViewById(R.id.textView2);
         Start=findViewById(R.id.button);
+
         penerangn.setText("This system is used to check your Age, " +
                 "\nDate of Birth, Gender and State of Birth");
 
