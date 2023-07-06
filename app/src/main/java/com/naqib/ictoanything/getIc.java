@@ -30,6 +30,8 @@ public class getIc extends AppCompatActivity {
 
         penerangn.setText("Complete this form to check your detail");
 
+        Phone60.setEnabled(false);
+
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +79,10 @@ public class getIc extends AppCompatActivity {
         }
         else if(phone.isEmpty()) {
             Phone.setError("Please enter your Phone Number.");
+            return false;
+        }
+        else if(ic.length()!=12){
+            Ic.setError("Please enter your IC Number in correct format.");
             return false;
         }
         else {
