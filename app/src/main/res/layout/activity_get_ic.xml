@@ -125,4 +125,16 @@
         app:layout_constraintTop_toBottomOf="@+id/LinearLayout"
         app:layout_constraintVertical_bias="0.153" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="359dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#b98fb5"
+        android:text="EXIT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.153" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

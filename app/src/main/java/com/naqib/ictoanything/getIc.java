@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class getIc extends AppCompatActivity {
     TextView penerangn;
-    Button enter;
+    Button enter,exit;
     EditText Name,Ic,Phone,Phone60;
     String name,ic,phone;
 
@@ -22,6 +22,7 @@ public class getIc extends AppCompatActivity {
         setContentView(R.layout.activity_get_ic);
         penerangn=findViewById(R.id.textView2);
         enter=findViewById(R.id.button);
+        exit=findViewById(R.id.button2);
         Name=findViewById(R.id.etName);
         Ic=findViewById(R.id.etIc);
         Phone=findViewById(R.id.etRegPhone);
@@ -46,6 +47,15 @@ public class getIc extends AppCompatActivity {
                     i.putExtras(bundle);
                     startActivity(i);
                 }
+            }
+        });
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Bye... \nThankyou for using ur System", Toast.LENGTH_SHORT).show();
+                Intent x= new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(x);
             }
         });
     }
