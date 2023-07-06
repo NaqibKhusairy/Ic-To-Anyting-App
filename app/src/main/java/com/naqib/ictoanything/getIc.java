@@ -15,6 +15,7 @@ public class getIc extends AppCompatActivity {
     Button enter,exit;
     EditText Name,Ic,Phone,Phone60;
     String name,ic,phone;
+    int ic1,ic2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class getIc extends AppCompatActivity {
                 name=(Name.getText().toString()).toUpperCase();
                 ic=Ic.getText().toString();
                 phone=Phone.getText().toString();
+                ic1 = Integer.parseInt(ic.substring(2, 4));
+                ic2 = Integer.parseInt(ic.substring(4, 6));
 
                 if(required()){
                     Toast.makeText(getApplicationContext(), "Hi "+name+" Your Details is ..... ", Toast.LENGTH_SHORT).show();
@@ -83,6 +86,18 @@ public class getIc extends AppCompatActivity {
         }
         else if(ic.length()!=12){
             Ic.setError("Please enter your IC Number in correct format.");
+            return false;
+        }
+        else if(ic1>12){
+            Ic.setError("Month In Your Ic is wrong.");
+            return false;
+        }
+        else if(ic2>31){
+            Ic.setError("Date In Your Ic is wrong.");
+            return false;
+        }
+        else if(ic1==2&&ic2>29){
+            Ic.setError("February just have 29 day.");
             return false;
         }
         else {

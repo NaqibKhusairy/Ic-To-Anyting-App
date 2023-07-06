@@ -91,13 +91,18 @@ public class detail extends AppCompatActivity {
         Bundle bundle=getIntent().getExtras();
         name=bundle.getString("name");
         ic=bundle.getString("ic");
-        phone=bundle.getString("phone");
+        phone="+60"+bundle.getString("phone");
+
+        bfday();
+        Jntina();
+        Negeriasal();
 
         YD.setText("---------------------------------------------------------\n" +
-                "Your Detail\n---------------------------------------------------------");
-        detail.setText("Name : "+name+"\nIc : "+ic+"\nPhone Number : "+phone+
-                "\nDate Of Birth : \nAge : \nGender : \nState Of Birth : \n" +
-                "---------------------------------------------------------");
+                "YOUR DETAILS\n---------------------------------------------------------");
+        detail.setText("NAME : "+name+"\nIC : "+ic+"\nPHONE NUMBER : "+phone+
+                "\nDATE OF BIRTH : "+DOB+"\nAGE : "+umur+"\nGENDER : "+gend+
+                "\nSTATE OF BIRTH : " +from+
+                "\n---------------------------------------------------------");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
