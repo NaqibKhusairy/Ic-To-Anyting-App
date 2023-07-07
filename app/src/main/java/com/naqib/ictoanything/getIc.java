@@ -39,18 +39,23 @@ public class getIc extends AppCompatActivity {
                 name=(Name.getText().toString()).toUpperCase();
                 ic=Ic.getText().toString();
                 phone=Phone.getText().toString();
-                ic1 = Integer.parseInt(ic.substring(2, 4));
-                ic2 = Integer.parseInt(ic.substring(4, 6));
 
-                if(required()){
-                    Toast.makeText(getApplicationContext(), "Hi "+name+" Your Details is ..... ", Toast.LENGTH_SHORT).show();
-                    Intent i= new Intent(getApplicationContext(),detail.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("name", name);
-                    bundle.putString("ic", ic);
-                    bundle.putString("phone", phone);
-                    i.putExtras(bundle);
-                    startActivity(i);
+                try {
+                    ic1 = Integer.parseInt(ic.substring(2, 4));
+                    ic2 = Integer.parseInt(ic.substring(4, 6));
+
+                    if(required()){
+                        Toast.makeText(getApplicationContext(), "Hi "+name+" Your Details is ..... ", Toast.LENGTH_SHORT).show();
+                        Intent i= new Intent(getApplicationContext(),detail.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("name", name);
+                        bundle.putString("ic", ic);
+                        bundle.putString("phone", phone);
+                        i.putExtras(bundle);
+                        startActivity(i);
+                    }
+                } catch (Exception e) {
+                    required();
                 }
             }
         });
